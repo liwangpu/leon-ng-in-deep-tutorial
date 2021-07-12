@@ -1,0 +1,39 @@
+<p class="title">日志设置面板</p>
+<form [formGroup]='form'>
+    <!-- <label>
+        <input type="checkbox" formControlName='logTitle' />
+        <span>title</span>
+    </label> -->
+    <label>
+        <input type="checkbox" formControlName='logOnChanges' />
+        <span>onChanges</span>
+    </label>
+    <label>
+        <input type="checkbox" formControlName='logOnInit' />
+        <span>onInit</span>
+    </label>
+    <label>
+        <input type="checkbox" formControlName='logDoCheck' />
+        <span>doCheck</span>
+    </label>
+    <label>
+        <input type="checkbox" formControlName='logAfterContentInit' />
+        <span>afterContentInit</span>
+    </label>
+    <label>
+        <input type="checkbox" formControlName='logAfterContentChecked' />
+        <span>afterContentChecked</span>
+    </label>
+    <label>
+        <input type="checkbox" formControlName='logAfterViewInit' />
+        <span>afterViewInit</span>
+    </label>
+    <label>
+        <input type="checkbox" formControlName='logAfterViewChecked' />
+        <span>afterViewChecked</span>
+    </label>
+    <label>
+        <input type="checkbox" formControlName='logOnDestroy' />
+        <span>onDestroy</span>
+    </label>
+</form>
