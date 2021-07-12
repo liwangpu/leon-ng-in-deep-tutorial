@@ -17,7 +17,6 @@ import { dataMap, topicFilter } from '../../services/opsat.service';
 export class AComponent extends Logger {
 
     public key: string = 'A';
-    public userName?: string;
     public constructor(
         injector: Injector
     ) {
@@ -31,11 +30,6 @@ export class AComponent extends Logger {
 
     public ngOnInit(): void {
         super.ngOnInit();
-
-        this.opsat.message$.pipe(topicFilter('user'), dataMap).subscribe(({ name }) => {
-            console.log('a get user name:', name);
-            this.userName = name;
-        });
     }
 
 

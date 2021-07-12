@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, forwardRef, Injector, SimpleChanges } from '@angular/core';
 import { Logger } from '../../models/logger';
 import * as faker from 'faker';
+import { OpsatService } from '../../services/opsat.service';
 
 @Component({
     selector: 'app-top',
@@ -10,14 +11,14 @@ import * as faker from 'faker';
         {
             provide: Logger,
             useExisting: forwardRef(() => TopComponent)
-        }
+        },
+        OpsatService
     ],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TopComponent extends Logger {
 
     public key: string = 'TOP';
-    public userName?: string = 'null';
     public constructor(
         injector: Injector
     ) {

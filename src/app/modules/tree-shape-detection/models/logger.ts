@@ -1,5 +1,6 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectorRef, Directive, DoCheck, Injector, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { OpsatService } from '../services/opsat.service';
+import { SubSink } from 'subsink';
+import { dataMap, OpsatService, topicFilter } from '../services/opsat.service';
 
 export function getToggleValue(toggle: string): boolean {
     let str = localStorage.getItem(toggle);
@@ -15,6 +16,7 @@ export abstract class Logger implements OnChanges, OnInit, DoCheck, AfterContent
 
     public abstract key: string;
     public logTitle: boolean;
+    public logUserNameChange: boolean;
     public logOnChanges: boolean;
     public logOnInit: boolean;
     public logDoCheck: boolean;
@@ -23,10 +25,13 @@ export abstract class Logger implements OnChanges, OnInit, DoCheck, AfterContent
     public logAfterViewInit: boolean;
     public logAfterViewChecked: boolean;
     public logOnDestroy: boolean;
+    public userName?: string;
+    private subs = new SubSink();
     public constructor(
         protected injector: Injector
     ) {
         this.logTitle = getToggleValue('logTitle');
+        this.logUserNameChange = getToggleValue('logUserNameChange');
         this.logOnChanges = getToggleValue('logOnChanges');
         this.logOnInit = getToggleValue('logOnInit');
         this.logDoCheck = getToggleValue('logDoCheck');
@@ -57,6 +62,13 @@ export abstract class Logger implements OnChanges, OnInit, DoCheck, AfterContent
 
     public ngOnInit(): void {
         if (this.logOnInit) { console.log(`${this.key} onInit`); }
+
+        this.subs.sink = this.opsat.message$.pipe(topicFilter('user'), dataMap).subscribe(({ name }) => {
+            if (this.logUserNameChange) {
+                console.log(`${this.title} user name change:`, name);
+            }
+            this.userName = name;
+        });
     }
 
 
@@ -82,6 +94,7 @@ export abstract class Logger implements OnChanges, OnInit, DoCheck, AfterContent
 
     public ngOnDestroy(): void {
         if (this.logOnDestroy) { console.log(`${this.key} destroy`); }
+        this.subs.unsubscribe();
     }
 
 }

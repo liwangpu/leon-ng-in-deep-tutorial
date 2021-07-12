@@ -17,7 +17,6 @@ import { Logger } from '../../models/logger';
 export class A1Component extends Logger {
 
     public key: string = 'A1';
-    public userName?: string;
     public constructor(
         injector: Injector
     ) {
@@ -31,11 +30,6 @@ export class A1Component extends Logger {
 
     public ngOnInit(): void {
         super.ngOnInit();
-
-        this.opsat.message$.pipe(topicFilter('user'), dataMap).subscribe(({ name }) => {
-            console.log('a1 get user name:', name);
-            this.userName = name;
-        });
     }
 
 
@@ -64,10 +58,7 @@ export class A1Component extends Logger {
     }
 
     public refresh(): void {
-        setTimeout(() => {
-            this.userName = Date.now().toString();
-            console.log('work....', this.userName);
-        }, 2000);
+
     }
 
 }

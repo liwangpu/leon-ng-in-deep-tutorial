@@ -11,8 +11,6 @@ import { B1Component } from './components/b1/b1.component';
 import { B2Component } from './components/b2/b2.component';
 import { TopComponent } from './components/top/top.component';
 import { TreeShapeDetectionRoutingModule } from './tree-shape-detection-routing.module';
-import { OpsatService } from './services/opsat.service';
-
 
 @NgModule({
     declarations: [
@@ -24,7 +22,6 @@ import { OpsatService } from './services/opsat.service';
         TreeShapeDetectionRoutingModule
     ],
     providers: [
-        OpsatService
     ]
 })
 export class TreeShapeDetectionModule { }

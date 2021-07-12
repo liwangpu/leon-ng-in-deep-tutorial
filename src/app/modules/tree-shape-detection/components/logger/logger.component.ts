@@ -17,6 +17,7 @@ export class LoggerComponent implements OnInit, OnDestroy {
     ) {
         this.form = fb.group({
             logTitle: [],
+            logUserNameChange: [],
             logOnChanges: [],
             logOnInit: [],
             logDoCheck: [],
@@ -35,6 +36,7 @@ export class LoggerComponent implements OnInit, OnDestroy {
     public ngOnInit(): void {
         let initialValue = {
             logTitle: getToggleValue('logTitle'),
+            logUserNameChange: getToggleValue('logUserNameChange'),
             logOnChanges: getToggleValue('logOnChanges'),
             logOnInit: getToggleValue('logOnInit'),
             logDoCheck: getToggleValue('logDoCheck'),
