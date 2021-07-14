@@ -69,6 +69,7 @@ export abstract class Logger implements OnChanges, OnInit, DoCheck, AfterContent
             }
             this.userName = name;
         });
+        // this.cd.markForCheck();
     }
 
 

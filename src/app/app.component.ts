@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DoCheck, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-root',
@@ -6,10 +6,14 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
     styleUrls: ['./app.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, DoCheck {
 
     public constructor() {
 
+    }
+
+    public ngDoCheck(): void {
+        console.log('app component do check');
     }
 
     public ngOnInit(): void {

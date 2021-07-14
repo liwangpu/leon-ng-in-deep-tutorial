@@ -8,6 +8,10 @@ const routes: Routes = [
         component: HomeComponent
     },
     {
+        path: 'detection-lifestyle',
+        loadChildren: () => import('./modules/detection-lifestyle/detection-lifestyle.module').then(m => m.DetectionLifestyleModule)
+    },
+    {
         path: 'tree-shape-detection',
         loadChildren: () => import('./modules/tree-shape-detection/tree-shape-detection.module').then(m => m.TreeShapeDetectionModule)
     },

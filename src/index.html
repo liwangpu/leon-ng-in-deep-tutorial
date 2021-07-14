@@ -8,10 +8,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="assets/styles/pure-min.css">
+    <link rel="stylesheet" href="assets/styles/index.css">
+    <script src="assets/scripts/index.js"></script>
 </head>
 
 <body>
+
+    <div class="outside-ng-panel" id="outsideNgPanel">
+        <h4 class="title">Angular应用之外的面板</h4>
+        <div class="buttons">
+            <button class="pure-button button-small button-secondary" id="btnCheckNgComponent">查看Ng组件</button>
+            <button class="pure-button button-small button-secondary"
+                id="btnTriggerMarkForCheck">触发MarkForCheck()</button>
+                <button class="pure-button button-small button-secondary"
+                id="btnTriggerAppTick">触发App Tick()</button>
+        </div>
+        <div class="close" id="btnClose">✖</div>
+    </div>
+    <div class="outside-ng-panel-mask" id="panelMaskPanel"></div>
+
     <app-root></app-root>
+
 </body>
 
 </html>
