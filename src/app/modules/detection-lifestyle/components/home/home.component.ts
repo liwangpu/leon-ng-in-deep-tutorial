@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit, DoCheck {
 
     public ngOnInit(): void {
         (window as any)['getNgComponent'] = () => this;
+        console.log('cd:', this.cd);
+
     }
 
     public openOutsidePanel(): void {
