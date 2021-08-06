@@ -15,14 +15,18 @@
 <body>
 
     <div class="outside-ng-panel" id="outsideNgPanel">
-        <h4 class="title">Angular应用之外的面板</h4>
-        <div class="buttons">
-            <button class="pure-button button-small button-secondary" id="btnCheckNgComponent">查看Ng组件</button>
-            <button class="pure-button button-small button-secondary"
-                id="btnTriggerMarkForCheck">触发MarkForCheck()</button>
-            <button class="pure-button button-small button-secondary" id="btnTriggerAppTick">触发App Tick()</button>
-            <button class="pure-button button-small button-secondary"
-                id="btnManualSetNgComponentUpdateTime">手动设置Ng组件的updateTime属性</button>
+        <div class="wrapper">
+            <h4 class="title">Angular应用之外的面板</h4>
+            <div class="buttons">
+                <button class="pure-button button-small button-secondary" id="btnCheckNgComponent">查看Ng组件</button>
+                <button class="pure-button button-small button-secondary"
+                    id="btnTriggerMarkForCheck">触发MarkForCheck()</button>
+                    <button class="pure-button button-small button-secondary"
+                    id="btnTriggerDetectChanges">触发DetectChanges()</button>
+                <button class="pure-button button-small button-secondary" id="btnTriggerAppTick">触发App Tick()</button>
+                <button class="pure-button button-small button-secondary"
+                    id="btnManualSetNgComponentUpdateTime">手动设置Ng组件的updateTime属性</button>
+            </div>
         </div>
         <div class="close" id="btnClose">✖</div>
     </div>

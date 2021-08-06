@@ -1,0 +1,21 @@
+:host {
+    display: flex;
+    flex-flow: column;
+
+    div.header {}
+
+    div.button {
+        display: flex;
+        align-items: flex-start;
+        padding: 12px;
+
+        &>* {
+            margin-right: 12px;
+        }
+    }
+
+    div.content {
+        flex: 1;
+        padding: 12px;
+    }
+}

@@ -8,6 +8,7 @@ window.onload = function () {
 
     document.getElementById('btnCheckNgComponent').addEventListener('click', funCheckNgComponent);
     document.getElementById('btnTriggerMarkForCheck').addEventListener('click', funTriggerMarkForCheck);
+    document.getElementById('btnTriggerDetectChanges').addEventListener('click', funTriggerDetectChanges);
     document.getElementById('btnTriggerAppTick').addEventListener('click', funTriggerAppTick);
     document.getElementById('btnManualSetNgComponentUpdateTime').addEventListener('click', funManualSetNgComponentUpdateTime);
     document.getElementById('btnClose').addEventListener('click', toggleOutsidePanel);
@@ -22,6 +23,12 @@ function funCheckNgComponent() {
 function funTriggerMarkForCheck() {
     var ngCpt = window.getNgComponent();
     ngCpt.doMarkForCheck();
+}
+
+function funTriggerDetectChanges() {
+    var ngCpt = window.getNgComponent();
+    console.log(1,ngCpt);
+    ngCpt.doDetectChanges();
 }
 
 function funTriggerAppTick() {

@@ -2,13 +2,12 @@
     display: flex;
     width: 100%;
     height: 100%;
-    min-width: 1000px;
-
+ 
     div.navbar {
         display: flex;
         flex-flow: column;
         align-items: center;
-        width: 200px;
+        width: 300px;
         height: 100%;
         padding: 1rem;
         background-color: #1E1E1E;
@@ -44,9 +43,17 @@
     }
 
     div.content {
+        position: relative;
         flex: 1 1 0;
         height: 100%;
-        padding: 1rem;
         background: linear-gradient(90deg, hsl(24, 20%, 87%) 1px, hsl(24, 20%, 95%)) -3px no-repeat;
+
+        div.wrapper {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+            overflow: auto;
+        }
     }
 }

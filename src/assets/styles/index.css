@@ -26,10 +26,16 @@ body {
     height: 100%;
     background-color: rgba(220, 220, 220, .3);
     z-index: 998;
+    overflow: hidden;
 }
 
 .outside-ng-panel-mask.show {
     display: block;
+}
+
+.outside-ng-panel>.wrapper {
+    width: 100%;
+    padding: 12px 20px;
 }
 
 .outside-ng-panel {
@@ -46,7 +52,6 @@ body {
 
 .outside-ng-panel.show {
     height: 180px;
-    padding: 12px 20px;
 }
 
 .outside-ng-panel>.title {

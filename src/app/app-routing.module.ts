@@ -15,6 +15,10 @@ const routes: Routes = [
         path: 'tree-shape-detection',
         loadChildren: () => import('./modules/tree-shape-detection/tree-shape-detection.module').then(m => m.TreeShapeDetectionModule)
     },
+    {
+        path: 'view-detach',
+        loadChildren: () => import('./modules/view-detach/view-detach.module').then(m => m.ViewDetachModule)
+    },
     { path: '', pathMatch: 'full', redirectTo: 'home' },
     { path: '**', redirectTo: 'home' }
 ];

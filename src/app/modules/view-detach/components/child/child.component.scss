@@ -1,0 +1,21 @@
+:host {
+    display: flex;
+    flex-flow: column;
+    height: 200px;
+    border: 1px solid gray;
+
+    div.header {
+        padding: 6px;
+    }
+
+    div.content {
+        flex: 1;
+        padding: 12px;
+        display: flex;
+        align-items: flex-start;
+
+        &>* {
+            margin-right: 12px;
+        }
+    }
+}

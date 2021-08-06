@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit, DoCheck {
 
     public ngOnInit(): void {
         (window as any)['getNgComponent'] = () => this;
-        console.log('cd:', this.cd);
+        // console.log('cd:', (this.cd as any)['oldValues']);
 
     }
 
@@ -35,9 +35,15 @@ export class HomeComponent implements OnInit, DoCheck {
         // console.log('markForCheck trigger!');
     }
 
+    public doDetectChanges(): void {
+        this.cd.detectChanges();
+        // console.log('detectChanges trigger!');
+    }
+
     public doAppTick(): void {
         this.appRef.tick();
         // console.log('app tick trigger!');
     }
 
 }
+

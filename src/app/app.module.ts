@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ApplicationRef, NgModule, NgZone } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ResourceService } from './services';
 
 @NgModule({
     declarations: [
@@ -13,9 +15,34 @@ import { HomeComponent } from './components/home/home.component';
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
-        AppRoutingModule
+        AppRoutingModule,
+        HttpClientModule
     ],
-    providers: [],
+    providers: [
+        ResourceService
+    ],
     bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+    public constructor(
+        private zone: NgZone,
+        private app: ApplicationRef
+    ) {
+        this.zone.onMicrotaskEmpty.subscribe(() => {
+            console.log('micro task empty');
+
+        });
+
+        this.zone.onStable.subscribe(() => {
+            console.log('on stable');
+        });
+
+        this.app.isStable.subscribe(t => {
+            // console.log('_views', this.app['_views']);
+
+            console.log('isStable status:', t);
+        });
+    }
+
+}
