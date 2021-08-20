@@ -1,6 +1,6 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectorRef, Directive, DoCheck, Injector, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { SubSink } from 'subsink';
-import { dataMap, OpsatService, topicFilter } from '../services/opsat.service';
+import { dataMap, OpsatService, topicFilter } from '../../../services';
 
 export function getToggleValue(toggle: string): boolean {
     let str = localStorage.getItem(toggle);

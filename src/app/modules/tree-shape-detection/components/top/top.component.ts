@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, forwardRef, Injector, SimpleChanges } from '@angular/core';
 import { Logger } from '../../models/logger';
 import * as faker from 'faker';
-import { OpsatService } from '../../services/opsat.service';
+import { OpsatService } from '../../../../services';
 
 @Component({
     selector: 'app-top',

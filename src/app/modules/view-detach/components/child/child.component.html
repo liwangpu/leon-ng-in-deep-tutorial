@@ -1,11 +1,12 @@
 <div class="header">
-    <h4>Child</h4>
+    <h4>{{title}}</h4>
 </div>
 <div class="content">
     <button class="pure-button button-small button-secondary" (click)='refreshUpdateTime()'>更新时间</button>
     <button class="pure-button button-small button-secondary" (click)='detachView()'>Detach</button>
     <button class="pure-button button-small button-secondary" (click)='reattachView()'>Reattach</button>
+    <!-- <button class="pure-button button-small button-secondary" (click)='destroy()'>Destroy</button> -->
 </div>
 <div class="footer">
-    <p>最后更新时间: {{updateTime}}</p>
+    <p>更新时间: <span class="update-time">{{updateTime}}</span></p>
 </div>

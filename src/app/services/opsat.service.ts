@@ -16,7 +16,7 @@ export const dataMap: OperatorFunction<IMessage, any> = map(x => x.data);
 @Injectable()
 export class OpsatService {
 
-    private _message$ = new BehaviorSubject<IMessage>({ topic: 'user', data: { name: 'null' } });
+    private _message$ = new BehaviorSubject<IMessage>({ topic: 'default', data: null });
     public get message$(): Observable<IMessage> {
         return this._message$.asObservable();
     }

@@ -1,11 +1,14 @@
 :host {
     display: flex;
     flex-flow: column;
-    height: 200px;
-    border: 1px solid gray;
+    height: 120px;
+    border: 1px solid #CACDD1;
+    margin-bottom: 12px;
+    user-select: none;
 
     div.header {
         padding: 6px;
+
     }
 
     div.content {
@@ -16,6 +19,14 @@
 
         &>* {
             margin-right: 12px;
+        }
+
+    }
+
+    div.footer {
+        padding: 0 12px 6px;
+        .update-time {
+            color: orange;
         }
     }
 }

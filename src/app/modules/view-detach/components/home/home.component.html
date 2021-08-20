@@ -1,9 +1,19 @@
-<div class="header">
-    <h4>Home</h4>
-</div>
 <div class="button">
-    <button class="pure-button button-small button-secondary" (click)='refresh()'>更新</button>
+    <button class="pure-button button-small button-secondary" (click)='refresh()'>更新消息</button>
+    <button class="pure-button button-small button-secondary" (click)='generateChild()'>生成Child</button>
+</div>
+<div class="child">
+    <!-- <p class="title">点击删除</p> -->
+    <!-- <p   >{{it}}</p> -->
+    <div class="item" *ngFor='let it of childArr'>
+        <p class="title">{{it}}</p>
+        <div class="buttons">
+            <button (click)='deleteChild(it)'>删除</button>
+            <button>Detach</button>
+            <button>Reattach</button>
+        </div>
+    </div>
 </div>
 <div class="content">
-    <app-child></app-child>
+    <ng-container #container></ng-container>
 </div>

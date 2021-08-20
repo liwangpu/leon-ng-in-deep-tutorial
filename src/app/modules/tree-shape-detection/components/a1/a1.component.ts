@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, forwardRef, Injector, SimpleChanges } from '@angular/core';
-import { dataMap, topicFilter } from '../../services/opsat.service';
+import { dataMap, topicFilter } from '../../../../services';
 import { Logger } from '../../models/logger';
 
 @Component({

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, forwardRef, Injector, SimpleChanges } from '@angular/core';
 import { Logger } from '../../models/logger';
-import { dataMap, topicFilter } from '../../services/opsat.service';
+import { dataMap, topicFilter } from '../../../../services';
 
 @Component({
     selector: 'app-a',

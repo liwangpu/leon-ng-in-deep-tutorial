@@ -31,18 +31,17 @@ export class AppModule {
     ) {
         this.zone.onMicrotaskEmpty.subscribe(() => {
             console.log('micro task empty');
-
         });
 
-        this.zone.onStable.subscribe(() => {
-            console.log('on stable');
-        });
+        // this.zone.onStable.subscribe((r) => {
+        //     console.log('on stable',r);
+        // });
 
-        this.app.isStable.subscribe(t => {
-            // console.log('_views', this.app['_views']);
+        // this.app.isStable.subscribe(t => {
+        //     // console.log('_views', this.app['_views']);
 
-            console.log('isStable status:', t);
-        });
+        //     console.log('isStable status:', t);
+        // });
     }
 
 }
